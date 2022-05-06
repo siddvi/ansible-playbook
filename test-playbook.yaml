@@ -1,6 +1,7 @@
 ---
  - name: play 1
    hosts: node
+   become: yes
    tasks:
      - name: execute command 'date'
        command: date
