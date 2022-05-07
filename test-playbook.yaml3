@@ -3,11 +3,8 @@
 - name: run task on node
   hosts: node
   tasks:
-   - name: creating a multiple directory in a loop
+   - name: ensure a directory exits
      file:
-       path: "$HOME/{{ item }}"
+       path: $HOME/test_directory
        state: directory
-     loop:
-       - test_directory1
-       - test_directory2
-       - test_directory3
+     
