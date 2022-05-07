@@ -8,4 +8,8 @@
        path: $HOME/test_file
        state: touch
 
-   
+   - name: creat symlink to test
+     file:
+       scr: $HOME/test_file
+       dest:  $HOME/test_file_link
+       state: link
