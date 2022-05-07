@@ -11,5 +11,5 @@
    - name: creat symlink to test
      file:
        scr: $HOME/test_file
-       dest:  $HOME/test_file_link
+       dest: $HOME/test_file_link
        state: link
