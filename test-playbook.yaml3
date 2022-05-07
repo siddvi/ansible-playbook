@@ -6,6 +6,6 @@
    - name: ensure a file exits
      file:
        path: $HOME/test_file
-       state: file
+       state: touch
 
    
