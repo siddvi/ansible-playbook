@@ -1,0 +1,13 @@
+---
+ - name: 
+   hosts: node
+   become: true
+
+   tasks:
+    yum:
+     name: nginx
+     state: latest
+
+    service 
+     name: nginx
+     state: started
