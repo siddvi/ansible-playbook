@@ -3,17 +3,9 @@
 - name: run task on node
   hosts: node
   tasks:
-   - name: ensure a directory exits
+   - name: ensure a file exits
      file:
-       path: $HOME/test_directory
-       state: directory
+       path: $HOME/test_file
+       state: file
 
-   - name: remove directory permissions
-     file:
-       path: $HOME/test_directory
-       state: directory
-       owner: root
-       group: root
-       mode: 0755
-     become: true
-       
+   
