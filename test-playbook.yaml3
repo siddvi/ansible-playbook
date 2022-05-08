@@ -5,7 +5,7 @@
   tasks:
    - name: ensure a file exits
      file:
-       path: "/home/{{ ansible_user}}/test_file
+       path: "/home/{{ ansible-playbook}}/test_file
        state: touch
 
   
