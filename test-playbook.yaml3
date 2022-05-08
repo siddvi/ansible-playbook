@@ -5,11 +5,7 @@
   tasks:
    - name: ensure a file exits
      file:
-       path: $HOME/test_file
+       path: "/home/{{ ansible_user}}/test_file
        state: touch
 
-   - name: create symlink to test_file
-     file:
-       scr: $HOME/test_file
-       dest: $HOME/test_file_link
-       state: link
+  
