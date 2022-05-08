@@ -4,14 +4,15 @@
   hosts: node
   tasks:
    - name: ensure a file exits
-     file:
-       path: "/home/{{ ansible_user }}/test_file"
-       state: touch
+     copy:
+       dest: "/home/{{ ansible_user }}/test_file"
+       content: "{{ ansible_host }}"
 
    - name: fetch test_file
      fetch:
        scr: "/home/{{ ansible_user }}/test_file"
-       dest: fetched
+       dest: "fetched/{{ inventory_hostname }}/"
+       flat: true
 
 
 
