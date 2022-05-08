@@ -5,12 +5,12 @@
   tasks:
    - name: ensure a file exits
      copy:
-       dest: "/home/{{ ansible_user }}/test_file"
+       dest: "/home/{{ ec2-user }}/test_file"
        content: "{{ ansible_host }}"
 
    - name: fetch test_file
      fetch:
-       scr: "/home/{{ ansible_user }}/test_file"
+       scr: "/home/{{ ec2-user }}/test_file"
        dest: "fetched/{{ inventory_hostname }}/"
        flat: true
 
