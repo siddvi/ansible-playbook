@@ -3,7 +3,8 @@
 - name: run task on node
   hosts: node
   vars:
-   - ansible_user: ec2-user
+   - name:
+      ansible_user: ec2-user
   tasks:
    - name: ensure a file exits
      copy:
