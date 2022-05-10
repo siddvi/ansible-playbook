@@ -2,21 +2,8 @@
 
 - name: run task on node
   hosts: node
-  vars:
-   - name:
-      ansible_user: ec2-user
   tasks:
-   - name: ensure a file exits
-     copy:
-       dest: "/home/{{ ansible_user }}/test_file"
-       content: "{{ ansible_host }}"
-
-   - name: fetch test_file
-     fetch:
-       scr: "/home/{{ ansible_user }}/test_file"
-       dest: "fetched/{{ inventory_hostname }}/"
-       flat: true
-
-
-
-  
+   - name: copy file to remote host
+     copy: 
+       scr: test_file
+       dest: $HOME/test_file
