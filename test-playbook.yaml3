@@ -5,5 +5,5 @@
   tasks:
    - name: copy file to remote host
      copy: 
-       scr: test_file
-       dest: $HOME/test_file
+       scr: ansible-playbook
+       dest: $HOME/ansible-playbook
