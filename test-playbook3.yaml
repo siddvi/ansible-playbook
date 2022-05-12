@@ -10,4 +10,7 @@
       template:
         src: my_app.conf.j2
         dest: /etc/my_app.conf
+        owner: root
+        group: root
+        mode: 0600
       become: true
