@@ -5,7 +5,7 @@
   tasks:
    - name: copy file to remote host
      copy: 
-       scr: my_app.conf
+       src: my_app.conf
        dest: /etc/my_app.conf
        owner: root
        group: root
