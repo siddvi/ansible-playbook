@@ -7,6 +7,6 @@
   tasks:
     - name: template file onto remote hosts
       template:
-        src: my_app,conf.j2
+        src: my_app.conf.j2
         dest: /etc/my_app.conf
       become: true
