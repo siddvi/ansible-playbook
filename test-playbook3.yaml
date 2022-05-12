@@ -2,7 +2,8 @@
 
 - name: run task on node
   hosts: node
-  vars:
+  var:
+    ansible_user: ec2-user
     env: staging
   tasks:
     - name: template file onto remote hosts
