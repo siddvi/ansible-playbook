@@ -5,5 +5,5 @@
   tasks:
    - name: copy file to remote host
      copy: 
-       scr: node.example.com
-       dest: $HOME/node.example.com
+       scr: test_file.com
+       dest: $HOME/test_file.com
