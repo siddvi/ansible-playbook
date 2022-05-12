@@ -5,5 +5,9 @@
   tasks:
    - name: copy file to remote host
      copy: 
-       scr: test_file.com
-       dest: $HOME/test_file.com
+       scr: my_app.conf
+       dest: /etc/my_app.conf
+       owner: root
+       group: root
+       mode: 0600
+     become: true
