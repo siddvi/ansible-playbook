@@ -5,11 +5,5 @@
   tasks:
    - name: copy file to remote host
      copy: 
-       src: test_file
        dest: $HOME/test_file
-       
-   - name: copy file on remote host
-     copy: 
-       src: $HOME/test_file
-       dest: $HOME/test_file.copy
-       remote_src: true
+       content: "{{ ansible_host }}\n"
