@@ -2,7 +2,7 @@
 
 - name: run task on node
   hosts: node
-  var:
+  vars:
     ansible_user: ec2-user
     env: staging
   tasks:
