@@ -18,3 +18,15 @@
       loop: "{{ users }}"
       loop_control:
         loop_var: user
+    
+    - name: create .gitconfig for each user
+      template:
+        src: .gitconfig.j2
+        dest: "/home/{{ user.username }}/.gitcongig"
+        owner: "{{ user.username }}"
+        group: "{{ user.username }}"
+        mode: 0644
+      become: true
+      loop: "{{ user }}"
+      loop_control:
+        loop_var: user
