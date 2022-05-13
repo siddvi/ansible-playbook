@@ -22,7 +22,7 @@
     - name: create .gitconfig for each user
       template:
         src: .gitconfig.j2
-        dest: "/home/{{ user.username }}/.gitcongig"
+        dest: "/home/{{ user.username }}/.gitconfig"
         owner: "{{ user.username }}"
         group: "{{ user.username }}"
         mode: 0644
