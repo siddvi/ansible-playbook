@@ -3,18 +3,18 @@
 - name: run task on node
   hosts: node
   vars:
-    ansible_user: ec2-user
-    env: staging
-    my_app_version: v1.1
+    users:
+     - name: vini
+       username: vinay
+     - name: siddharth
+       username: sidd
   tasks:
-    - name: template file onto remote hosts
-      template:
-        src: "{{ item }}.j2"
-        dest: "/etc/{{ item }}"
-        owner: root
-        group: root
-        mode: 0600  
+    - name: ensure users exits
+      user:
+        name: "{{ user.username }}"
+        comment: "{{ user.name }}"
+        state: present
       become: true
-      loop: 
-         - my_app.conf
-         - my_app-release
+      loop: "{{ users }}"
+      loop_control:
+        loop_var: user
