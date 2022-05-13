@@ -16,5 +16,5 @@
         mode: 0600  
       become: true
       loop: 
-        - my_app.conf
-        - my_app-release
+         - my_app.conf
+         - my_app-release
