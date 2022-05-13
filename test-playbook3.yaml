@@ -5,12 +5,16 @@
   vars:
     ansible_user: ec2-user
     env: staging
+    my_app_version: v1.1
   tasks:
     - name: template file onto remote hosts
       template:
-        src: my_app.conf.j2
-        dest: /etc/my_app.conf
+        src: "{{ item }}.j2"
+        dest: /etc/{{ item }}""
         owner: root
         group: root
-        mode: 0600
+        mode: 0600  
       become: true
+      loop: 
+        - my_app.conf
+        - my_app-release
