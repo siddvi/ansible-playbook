@@ -1,6 +1,6 @@
 ---
  - name: play 1
-   hosts: node
+   hosts: webserver
    become: yes
    tasks:
      - name: execute command 'date'
