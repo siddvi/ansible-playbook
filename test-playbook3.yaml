@@ -27,6 +27,6 @@
         group: "{{ user.username }}"
         mode: 0644
       become: true
-      loop: "{{ user }}"
+      loop: "{{ users }}"
       loop_control:
         loop_var: user
