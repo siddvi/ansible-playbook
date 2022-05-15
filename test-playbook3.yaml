@@ -1,8 +1,11 @@
 ---
 
 - name: run task on node
-  hosts: 
+  hosts: web
   tasks: 
    - name: install php7.2
      apt: 
        name: php7.2=7.2.3
+       state: present
+       update_cache: true
+      become: true
