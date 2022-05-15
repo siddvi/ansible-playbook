@@ -1,7 +1,7 @@
 ---
 
 - name: run task on node
-  hosts: web
+  hosts: "*"
   tasks: 
    - name: install php7.2
      apt: 
