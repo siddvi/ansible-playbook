@@ -1,32 +1,8 @@
 ---
 
 - name: run task on node
-  hosts: node
-  vars:
-    users:
-     - name: vini
-       username: vinay
-     - name: siddharth
-       username: sidd
-  tasks:
-    - name: ensure users exits
-      user:
-        name: "{{ user.username }}"
-        comment: "{{ user.name }}"
-        state: present
-      become: true
-      loop: "{{ users }}"
-      loop_control:
-        loop_var: user
-    
-    - name: create .gitconfig for each user
-      template:
-        src: .gitconfig.j2
-        dest: "/home/{{ user.username }}/.gitconfig"
-        owner: "{{ user.username }}"
-        group: "{{ user.username }}"
-        mode: 0644
-      become: true
-      loop: "{{ users }}"
-      loop_control:
-        loop_var: user
+  hosts: web
+  tasks: 
+   - name: install php7.2
+     apt: 
+       name: php7.2=7.2.3
