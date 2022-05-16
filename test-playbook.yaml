@@ -1,6 +1,6 @@
 ---
  - name: play 1
-   hosts: web
+   hosts: "*"
    become: yes
    tasks:
      - name: run command with shell
