@@ -1,16 +1,11 @@
 ---
  - name: play 1
-   hosts: webserver
+   hosts: web
    become: yes
    tasks:
-     - name: execute command 'date'
-       command: date
+     - name: run command with shell
+       shell: echo "hello, shell!" > /tmp/shell_output
 
-     - name: install httpd service
-       yum:
-          name: httpd
-          state: present
-     - name: start web server
-       service:
-          name: httpd
-          state: started
+     - name: run command with command
+       command: echo "hello, command!" > /tmp/command_output
+       
