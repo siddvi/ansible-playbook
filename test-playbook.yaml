@@ -3,9 +3,12 @@
    hosts: "*"
    become: yes
    tasks:
-     - name: run command with shell
-       shell: echo "hello, shell!" > /tmp/shell_output
-
-     - name: run command with command
-       command: echo "hello, command!" > /tmp/command_output
-       
+     - name: use args, environment and loop with shell
+       shell: echo "hello, shell!" > $TARGET
+       args: 
+         chdir: /tmp
+       environment:
+         TARGET: "{{ item }}"
+       loop:
+         - test_file1
+         - test_file2
