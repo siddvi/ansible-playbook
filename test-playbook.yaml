@@ -4,7 +4,7 @@
    become: yes
    tasks:
      - name: use args, environment and loop with shell
-       shell: echo "hello, shell!" > $TARGET
+       shell: echo "hello, world!" > $TARGET
        args: 
          chdir: /tmp
        environment:
