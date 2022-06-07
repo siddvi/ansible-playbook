@@ -3,9 +3,9 @@
 - name: run task on node
   hosts: "*"
   tasks: 
-   - name: install php7.2
+   - name: install httpd
      yum: 
-       name: php7.2=7.2.3
+       name: httpd
        state: present
        update_cache: true
        
