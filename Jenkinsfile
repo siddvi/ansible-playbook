@@ -3,7 +3,8 @@ pipeline {
 
     stages {
         stage('Hello') {
-            steps {
+            steps { 
+                echo "git clone"
                 git 'https://github.com/siddvi/ansible-playbook'
             }
         }
