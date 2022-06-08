@@ -3,21 +3,35 @@ pipeline {
 
     stages {
         stage('Hello') {
-            steps { 
-                echo "git clone"
+            steps {
                 git 'https://github.com/siddvi/ansible-playbook'
+                echo 'Hello World'
             }
         }
         stage('Hi') {
             steps {
-                echo "Running ansible playbook"
-                ansiblePlaybook credentialsId: 'c31a425f-201e-4b56-bc2d-2b9a86c3ec6a', disableHostKeyChecking: true, installation: 'Ansible', playbook: 'test-playbook3.yaml'
+                ansiblePlaybook credentialsId: 'c31a425f-201e-4b56-bc2d-2b9a86c3ec6a', disableHostKeyChecking: true, installation: 'Ansible', playbook: 'test-playbook.yaml'
+                echo 'bengaluru'
             }
         }
-        stage('Bye!') {
+        stage('remove directory') {
             steps {
-                echo "Bye ansible"
+                sh 'rm -r flower'
+                echo 'flower'
             }
         }
+        stage('creating directory') {
+            steps {
+                sh 'mkdir flower'
+                echo 'mkdir flower'
+            }
+        }
+        stage('creating file') {
+            steps {
+                sh 'touch file2'
+                echo 'touch file2'
+            }
+        }
+        
     }
 }
