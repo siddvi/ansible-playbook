@@ -11,4 +11,4 @@
          TARGET: "{{ item }}"
        loop:
          - test_file1
-         - test_file3
+         - test_file2
