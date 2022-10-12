@@ -9,6 +9,6 @@
          chdir: /tmp
        environment:
          TARGET: "{{ item }}"
-       loop
+       loop:
          - test_file1
          - test_file5
